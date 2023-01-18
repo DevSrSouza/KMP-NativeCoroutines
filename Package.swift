@@ -30,6 +30,5 @@ let package = Package(
             dependencies: ["KMPNativeCoroutinesCore", "RxSwift"],
             path: "KMPNativeCoroutinesRxSwift"
         )
-    ],
-    swiftLanguageVersions: [.v5]
+    ]
 )
