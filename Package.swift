@@ -3,19 +3,11 @@ import PackageDescription
 
 let package = Package(
     name: "KMPNativeCoroutines",
-    platforms: [.iOS(.v13), .macOS(.v10_15), .tvOS(.v13), .watchOS(.v6)],
+    platforms: [.iOS(.v10)],
     products: [
         .library(
             name: "KMPNativeCoroutinesCore",
             targets: ["KMPNativeCoroutinesCore"]
-        ),
-        .library(
-            name: "KMPNativeCoroutinesCombine",
-            targets: ["KMPNativeCoroutinesCombine"]
-        ),
-        .library(
-            name: "KMPNativeCoroutinesAsync",
-            targets: ["KMPNativeCoroutinesAsync"]
         ),
         .library(
             name: "KMPNativeCoroutinesRxSwift",
@@ -34,34 +26,9 @@ let package = Package(
             path: "KMPNativeCoroutinesCore"
         ),
         .target(
-            name: "KMPNativeCoroutinesCombine",
-            dependencies: ["KMPNativeCoroutinesCore"],
-            path: "KMPNativeCoroutinesCombine"
-        ),
-        .testTarget(
-            name: "KMPNativeCoroutinesCombineTests",
-            dependencies: ["KMPNativeCoroutinesCombine"],
-            path: "KMPNativeCoroutinesCombineTests"
-        ),
-        .target(
-            name: "KMPNativeCoroutinesAsync",
-            dependencies: ["KMPNativeCoroutinesCore"],
-            path: "KMPNativeCoroutinesAsync"
-        ),
-        .testTarget(
-            name: "KMPNativeCoroutinesAsyncTests",
-            dependencies: ["KMPNativeCoroutinesAsync"],
-            path: "KMPNativeCoroutinesAsyncTests"
-        ),
-        .target(
             name: "KMPNativeCoroutinesRxSwift",
             dependencies: ["KMPNativeCoroutinesCore", "RxSwift"],
             path: "KMPNativeCoroutinesRxSwift"
-        ),
-        .testTarget(
-            name: "KMPNativeCoroutinesRxSwiftTests",
-            dependencies: ["KMPNativeCoroutinesRxSwift"],
-            path: "KMPNativeCoroutinesRxSwiftTests"
         )
     ],
     swiftLanguageVersions: [.v5]
